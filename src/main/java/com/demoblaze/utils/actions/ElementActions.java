@@ -2,14 +2,16 @@ package com.demoblaze.utils.actions;
 
 import com.demoblaze.utils.WaitManager;
 import com.demoblaze.utils.logs.LogsManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.sql.DriverManager;
+import java.time.Duration;
+import java.util.List;
 
 public class ElementActions {
     private final WebDriver driver;
@@ -18,6 +20,72 @@ public class ElementActions {
     public ElementActions(WebDriver driver) {
         this.driver = driver;
         this.waitManager = new WaitManager(driver);
+    }
+
+
+    public void waitForPageToLoad() {
+
+        waitManager.fluentWait().until(d -> {
+            try {
+                JavascriptExecutor js = (JavascriptExecutor) d;
+
+                /*// Step 1: Wait for DOM ready state
+                String readyState = (String) js.executeScript("return document.readyState");
+                if (!"complete".equals(readyState)) {
+                    return false;
+                }*/
+
+                // Step 2 (optional): Wait for AJAX requests (if using jQuery)
+                try {
+                    Long activeAjax = (Long) js.executeScript("return window.jQuery ? jQuery.active : 0");
+                    if (activeAjax != 0) {
+                        return false;
+                    }
+                } catch (Exception ignored) {
+                    // jQuery not present, ignore
+                }
+
+               /* // Step 3: Wait for product container to exist
+                WebElement container = d.findElement(By.id("tbodyid"));
+                if (container == null || !container.isDisplayed()) {
+                    return false;
+                }
+
+                // Step 4: Wait for all product cards to be visible
+                List<WebElement> products = d.findElements(By.cssSelector("#tbodyid .col-lg-4.col-md-6.mb-4"));
+                if (products.isEmpty()) {
+                    System.out.println("Products not loaded yet...");
+                    return false;
+                }
+
+                for (WebElement product : products) {
+                    if (!product.isDisplayed()) {
+                        return false;
+                    }
+                }*/
+
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        });
+
+        LogsManager.info("Page fully loaded and all products are visible.");
+    }
+
+
+
+    //Check if element exists in DOM and is displayed
+    public boolean isElementPresent(By locator) {
+        try {
+            WebElement element = driver.findElement(locator);
+            boolean isDisplayed = element.isDisplayed();
+            System.out.println("Element " + locator + " is displayed: " + isDisplayed);
+            return isDisplayed;
+        } catch (Exception e) {
+            LogsManager.error("Failed to find element: " + locator, e.getMessage());
+            return false;
+        }
     }
 
     //Clicking
@@ -129,6 +197,9 @@ public class ElementActions {
 
     //function to scroll to an element using js
     public void scrollToElementJS(By locator) {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+
         ((org.openqa.selenium.JavascriptExecutor) driver)
                 .executeScript(""" 
                         arguments[0].scrollIntoView({behaviour:"auto",block:"center",inline:"center"});""", findElement(locator));

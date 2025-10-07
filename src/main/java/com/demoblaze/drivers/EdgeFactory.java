@@ -50,7 +50,7 @@ public class EdgeFactory extends AbstractDriver {
         options.setCapability(CapabilityType.ENABLE_DOWNLOADS, true);
         options.setAcceptInsecureCerts(true);
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        options.addExtensions(haramBlurExtension);
+        //options.addExtensions(haramBlurExtension);
         switch (PropertyReader.getProperty("executionType"))
         {
             case "LocalHeadless" -> options.addArguments("--headless=new");

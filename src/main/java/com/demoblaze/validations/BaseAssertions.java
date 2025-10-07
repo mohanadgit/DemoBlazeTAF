@@ -32,7 +32,8 @@ public abstract class BaseAssertions {
         return this;
     }
 
-    public void isElementVisible(By locator) {
+
+    public BaseAssertions isElementVisible(By locator) {
         boolean flag = waitManager.fluentWait().until(driver1 ->
         {
             try {
@@ -43,6 +44,21 @@ public abstract class BaseAssertions {
             }
         });
         assertTrue(flag, "Element is not visible: " + locator);
+        return this;
+    }
+
+    public BaseAssertions isElementNotVisible(By locator) {
+        boolean flag = waitManager.fluentWait().until(driver1 ->
+        {
+            try {
+                driver1.findElement(locator).isDisplayed();
+                return false;
+            } catch (Exception e) {
+                return true;
+            }
+        });
+        assertTrue(flag, "Element is visible: " + locator);
+        return this;
     }
 
     // verify page url

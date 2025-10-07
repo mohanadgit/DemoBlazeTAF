@@ -16,7 +16,7 @@ public class AllureEnvironmentManager {
                         .put("Java version:", getProperty("java.runtime.version"))
                         .put("Browser", getProperty("browserType"))
                         .put("Execution Type", getProperty("executionType"))
-                        .put("URL", getProperty("baseUrlWeb"))
+                        .put("URL", getProperty("baseurl"))
                         .build(), String.valueOf(AllureConstants.RESULTS_FOLDER) + File.separator
         );
         LogsManager.info("Allure environment variables set.");
