@@ -1,0 +1,18 @@
+{
+  "validLogin":
+  {
+    "username": "mohanad",
+    "password": "mh892003"
+  },
+  "invalidLogin":
+  {
+    "username": "mohanadkdk1",
+    "password": "mh89200dkslk3"
+  },
+
+  "messages" :
+  {
+    "wrongUsername": "User does not exist.",
+    "wrongPassword": "Wrong password."
+  }
+}

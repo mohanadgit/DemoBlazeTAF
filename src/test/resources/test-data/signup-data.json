@@ -1,0 +1,12 @@
+{
+  "credentials" :
+  {
+    "username": "mohanad",
+    "password": "mhmh89"
+  },
+  "messages" :
+  {
+    "successful": "Sign up successful.",
+    "userExist": "This user already exist."
+  }
+}
