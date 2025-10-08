@@ -26,6 +26,14 @@ public class HomePage {
     private final By nextButton = By.id("next2");
     private final By previousButton = By.id("prev2");
 
+    //Dynamic locators
+    String productName = "Samsung galaxy s6";
+
+    By nameLocator = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']");
+    By priceLocator = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']/ancestor::div[contains(@class,'card')]//h5");
+    By descLocator  = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']/ancestor::div[contains(@class,'card')]//p");
+
+
     //actions
     public HomePage navigate(){
         driver.browser().navigateTo(PropertyReader.getProperty("baseurl"));
@@ -82,6 +90,8 @@ public class HomePage {
     }
     public productDetailsPage clickOnProduct(String productName){
         By productLink = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']");
+        By priceLocator = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']/ancestor::div[contains(@class,'card')]//h5");
+        By descLocator  = By.xpath("//a[@class='hrefch' and normalize-space(text())='" + productName + "']/ancestor::div[contains(@class,'card')]//p");
         while(!driver.element().isElementPresent(productLink)){
             System.out.println("Product with name '" + productName + "' not found on this page.");
             if(driver.element().isElementPresent(nextButton)){
@@ -94,7 +104,9 @@ public class HomePage {
                 return null;
             }
         }
+        System.out.println("Product with name '" + productName + "' found." + " Price: " + driver.element().getText(priceLocator) + " Description: " + driver.element().getText(descLocator));
         driver.element().click(productLink);
+        driver.element().waitForPageToLoad();
         return new productDetailsPage(driver);
     }
 
