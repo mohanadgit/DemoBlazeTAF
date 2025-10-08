@@ -1,0 +1,39 @@
+{
+  "product1": {
+    "name": "Samsung galaxy s6",
+    "price": "$360",
+    "description": "The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded."
+  },
+  "product2": {
+    "name": "Nokia lumia 1520",
+    "price": "$820",
+    "description": "The Nokia Lumia 1520 is powered by 2.2GHz quad-core Qualcomm Snapdragon 800 processor and it comes with 2GB of RAM."
+  },
+  "product3": {
+    "name": "MacBook Pro",
+    "price": "$1100",
+    "description": "Apple has introduced three new versions of its MacBook Pro line, including a 13-inch and 15-inch model with the Touch Bar, a thin, multi-touch strip display that sits above the MacBook Pro's keyboard."
+  },
+  "product4": {
+    "name": "ASUS Full HD",
+    "price": "$230",
+    "description": "ASUS VS247H-P 23.6- Inch Full HD"
+  },
+
+  "credentials" :
+  {
+    "username": "mohanad",
+    "password": "mhmh89"
+  },
+  "messages" :
+  {
+
+    "successful": "Sign up successful.",
+    "userExist": "This user already exist.",
+    "productAdded": "Product added."
+  },
+
+  "total1":"2280",
+  "total2":"1460"
+
+}

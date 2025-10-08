@@ -14,6 +14,8 @@ public class HomeTest extends BaseTest {
 
 
     //Tests
+    //TODO: Add more test cases catefgories
+
     @Test
     @Description("Verify finding product")
     public void findProductTC()

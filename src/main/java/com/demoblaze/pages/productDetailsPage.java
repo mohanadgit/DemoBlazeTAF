@@ -24,6 +24,10 @@ public class productDetailsPage {
         driver.element().click(addToCartButton);
         return this;
     }
+    public HomePage acceptAlert() {
+        driver.alert().acceptAlert();
+        return homePage;
+    }
 
     //getters
     @Step("GET PRODUCT TITLE")
@@ -51,6 +55,4 @@ public class productDetailsPage {
         driver.verification().Equals(getProductDescription(), expectedDescription, "Product description is not as expected");
         return this;
     }
-
-
 }

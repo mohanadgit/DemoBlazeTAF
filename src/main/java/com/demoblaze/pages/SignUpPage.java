@@ -39,6 +39,10 @@ public class SignUpPage {
         driver.element().click(closeSignUpModalButton);
         return new HomePage(driver);
     }
+    public HomePage acceptAlert() {
+        driver.alert().acceptAlert();
+        return homePage;
+    }
 
 
     //validations
@@ -57,5 +61,6 @@ public class SignUpPage {
         driver.verification().Equals(acutalMessage, expectedMessage, "User already exist alert message is not as expected");
         return this;
     }
+
 
 }

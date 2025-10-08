@@ -22,8 +22,6 @@
 
 
   "messages": {
-    "productAdded": "Product added",
-    "productDeleted": "Product deleted.",
-    "productUpdated": "Product updated."
+    "productAdded": "Product added."
   }
 }
