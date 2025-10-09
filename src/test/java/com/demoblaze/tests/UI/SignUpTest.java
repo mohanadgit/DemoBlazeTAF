@@ -8,6 +8,7 @@ import com.demoblaze.pages.SignUpPage;
 import com.demoblaze.tests.BaseTest;
 import com.demoblaze.utils.TimeManager;
 import com.demoblaze.utils.dataReader.JsonReader;
+import io.qameta.allure.*;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +16,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+@Epic("Demoblaze")
+@Feature("Sign Up Functionality")
+@Story("User Sign Up with Valid and Invalid Credentials")
+@Severity(SeverityLevel.CRITICAL)
+@Owner("Mohanad")
 @UITest
 public class SignUpTest extends BaseTest {
 

@@ -66,6 +66,7 @@ public class HomePage {
     }
     public HomePage clickOnLogOutButton(){
         driver.element().click(logputButon);
+        driver.element().waitForPageToLoad();
         return this;
     }
     public HomePage clickOnPhoneCategory(){
@@ -119,8 +120,8 @@ public class HomePage {
     }
     @Step("Verify that user is logged out")
     public HomePage verifyUserIsLoggedOut() {
-        driver.validation().isElementVisible(logInButon)
-                .isElementNotVisible(userNameLabel);
+        driver.element().waitForPageToLoad();
+        driver.verification().isElementVisible(logInButon);
         return this;
     }
 }

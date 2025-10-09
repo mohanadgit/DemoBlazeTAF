@@ -1,0 +1,13 @@
+{
+  "validLogin":
+  {
+    "username": "mohanad",
+    "password": "mh892003",
+    "tokenPass": "bWg4OTIwMDM="
+  },
+  "messages" :
+  {
+    "successful": "Sign up successful.",
+    "userExist": "This user already exist."
+  }
+}

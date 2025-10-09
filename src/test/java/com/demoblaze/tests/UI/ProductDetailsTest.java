@@ -5,12 +5,17 @@ import com.demoblaze.drivers.UITest;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.tests.BaseTest;
 import com.demoblaze.utils.dataReader.JsonReader;
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Epic("Demoblaze")
+@Feature("Product Details Functionality")
+@Story("View Product Details and Add to Cart without Login")
+@Severity(SeverityLevel.CRITICAL)
+@Owner("Mohanad")
 @UITest
 public class ProductDetailsTest extends BaseTest {
 

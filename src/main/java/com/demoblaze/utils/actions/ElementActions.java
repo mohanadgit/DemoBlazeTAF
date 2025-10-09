@@ -107,7 +107,7 @@ public class ElementActions {
                         LogsManager.info("Clicked on element: " + locator);
                         return true;
                     } catch (Exception e) {
-                        LogsManager.error("Failed to click on element: " + locator, e.getMessage());
+                        LogsManager.warn("Failed to click on element: " + locator, e.getMessage());
                         return false;
                     }
                 }
@@ -144,7 +144,7 @@ public class ElementActions {
                         LogsManager.info("Hovered over element: " + locator);
                         return true;
                     } catch (Exception e) {
-                        LogsManager.error("Failed to click on element: " + locator, e.getMessage());
+                        LogsManager.warn("Failed to click on element: " + locator, e.getMessage());
                         return false;
                     }
                 }

@@ -19,7 +19,7 @@ public class PropertyReader {
                 try {
                     properties.load(new FileInputStream(file));
                 } catch (Exception e) {
-                    LogsManager.error("Error loading properties file:", file.getName(), e.getMessage());
+                    LogsManager.warn("Error loading properties file:", file.getName(), e.getMessage());
                 }
                 properties.putAll(System.getProperties());
                 System.getProperties().putAll(properties);

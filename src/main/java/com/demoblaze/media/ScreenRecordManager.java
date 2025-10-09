@@ -40,7 +40,7 @@ public class ScreenRecordManager {
 
 
             } catch (Exception e) {
-                LogsManager.error("Failed to start recording: " + e.getMessage());
+                LogsManager.warn("Failed to start recording: " + e.getMessage());
             }
 
         }

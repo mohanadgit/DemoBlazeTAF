@@ -34,5 +34,13 @@
   },
 
   "total1":"2280",
-  "total2":"1460"
+  "total2":"1460",
+  "checkout": {
+    "name": "Mohanad",
+    "country": "Egypt",
+    "city": "Cairo",
+    "creditCard": "1234567890123456",
+    "month": "12",
+    "year": "2024"
+  }
 }

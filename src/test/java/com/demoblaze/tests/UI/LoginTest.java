@@ -7,6 +7,7 @@ import com.demoblaze.pages.LoginPage;
 import com.demoblaze.tests.BaseTest;
 import com.demoblaze.utils.TimeManager;
 import com.demoblaze.utils.dataReader.JsonReader;
+import io.qameta.allure.*;
 import jdk.jfr.Description;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +15,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+@Epic("Demoblaze")
+@Feature("Login Functionality")
+@Story("User Login with Valid and Invalid Credentials")
+@Severity(SeverityLevel.CRITICAL)
+@Owner("Mohanad")
 @UITest
 public class LoginTest extends BaseTest {
 

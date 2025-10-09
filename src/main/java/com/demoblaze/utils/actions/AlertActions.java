@@ -25,7 +25,7 @@ public class AlertActions {
             }
             catch (Exception e)
             {
-                LogsManager.error("Failed to accept alert:" , e.getMessage());
+                LogsManager.warn("Failed to accept alert:" , e.getMessage());
                 return  false;
             }
         });
@@ -43,7 +43,7 @@ public class AlertActions {
             }
             catch (Exception e)
             {
-                LogsManager.error("Failed to dismiss alert:" , e.getMessage());
+                LogsManager.warn("Failed to dismiss alert:" , e.getMessage());
                 return  false;
             }
         });
@@ -62,7 +62,7 @@ public class AlertActions {
             }
             catch (Exception e)
             {
-                LogsManager.error("Failed to get alert text:", e.getMessage());
+                LogsManager.warn("Failed to get alert text:", e.getMessage());
                 return null;
             }
         });
@@ -81,7 +81,7 @@ public class AlertActions {
             }
             catch (Exception e)
             {
-                LogsManager.error("Failed to set alert text:", e.getMessage());
+                LogsManager.warn("Failed to set alert text:", e.getMessage());
                 return false;
             }
         });
