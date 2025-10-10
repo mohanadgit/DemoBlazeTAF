@@ -7,7 +7,7 @@
 ## Repository Information
 
 - **Owner:** [mohanadgit](https://github.com/mohanadgit)
-- **Repository URL:** [automation-exercise-test](https://github.com/mohanadgit/DemoBlazeTAF)
+- **Repository URL:** [DemoBlaze-test](https://github.com/mohanadgit/DemoBlazeTAF)
 - **Primary Language:** Java
 
 ## 🚀 Features  
