@@ -98,6 +98,7 @@ DemoBlaze-test/
 ├── .idea
     ├── .gitignore
     └── dbnavigator.xml
+├── README.md
 ├── pom.xml
 └── src
     ├── main
@@ -179,6 +180,7 @@ DemoBlaze-test/
             │           └── UI
             │               ├── CartTest.java
             │               ├── CheckoutTest.java
+            │               ├── E2ETest.java
             │               ├── HomeTest.java
             │               ├── LoginTest.java
             │               ├── LogoutTest.java
