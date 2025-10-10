@@ -2,15 +2,21 @@ package com.demoblaze.tests.UI;
 
 import com.demoblaze.apis.UserManagementAPI;
 import com.demoblaze.drivers.GUIDriver;
+import com.demoblaze.drivers.UITest;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import com.demoblaze.pages.SignUpPage;
 import com.demoblaze.tests.BaseTest;
 import com.demoblaze.utils.TimeManager;
 import com.demoblaze.utils.dataReader.JsonReader;
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import org.testng.annotations.*;
 
+@Epic("Demoblaze")
+@Feature("Logout")
+@Severity(SeverityLevel.CRITICAL)
+@Owner("Mohanad")
+@UITest
 public class LogoutTest extends BaseTest {
 
     String timestamp = TimeManager.getSimpleTimestamp();
